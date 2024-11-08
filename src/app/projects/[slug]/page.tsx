@@ -6,10 +6,10 @@ import { notFound } from 'next/navigation';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const project = getProjectBySlug(resolvedParams.slug);
   
@@ -44,7 +44,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
   const resolvedParams = await params;
   const project = getProjectBySlug(resolvedParams.slug);
 
