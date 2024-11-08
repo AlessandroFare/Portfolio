@@ -4,11 +4,11 @@ import ProjectPage from '@/components/ProjectPage';
 import { getProjectBySlug, projects } from '@/config/projects';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
+type PageProps = {
   params: {
     slug: string;
   };
-}
+};
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const project = getProjectBySlug(params.slug);
