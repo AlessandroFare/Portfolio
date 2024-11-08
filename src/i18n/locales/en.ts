@@ -1,4 +1,5 @@
-export default {
+// Assegnare l'oggetto a una variabile
+const translations = {
   nav: {
     home: 'Home',
     about: 'About',
@@ -170,4 +171,6 @@ export default {
       follow: 'Follow me on social media'
     }
   },
-}; 
+};
+
+export default translations; 

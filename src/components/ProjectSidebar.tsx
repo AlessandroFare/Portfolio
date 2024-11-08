@@ -16,6 +16,11 @@ interface StatTooltip {
   [key: string]: string;
 }
 
+interface DragEvent {
+  offset: { x: number; y: number };
+  velocity: { x: number; y: number };
+}
+
 export default function ProjectSidebar({ project }: ProjectSidebarProps) {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);

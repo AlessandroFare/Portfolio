@@ -9,28 +9,22 @@ import { getProjectDescription } from '@/config/projects';
 
 interface ProjectCardProps {
   title: string;
-  description: string;
-  imageSrc: string;
-  href: string;
-  index: number;
+  image: string;
   technologies: string[];
-  slug: string;
+  href: string;
 }
 
 export default function ProjectCard({ 
   title, 
-  description, 
-  imageSrc, 
-  href, 
-  index, 
-  technologies,
-  slug 
+  image, 
+  technologies, 
+  href 
 }: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
   // Ottieni la descrizione tradotta
-  const translatedDescription = getProjectDescription(slug, language);
+  const translatedDescription = getProjectDescription(title, language);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -71,7 +65,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.5,
-        delay: index * 0.1
+        delay: 0.1
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -85,7 +79,7 @@ export default function ProjectCard({
       <Link href={href} className="block w-full h-full">
         <div className="absolute inset-0 w-full h-full transform-gpu">
           <Image
-            src={imageSrc}
+            src={image}
             alt={title}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"

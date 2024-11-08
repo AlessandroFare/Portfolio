@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronUp, Menu } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -16,12 +16,12 @@ export default function TableOfContents() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
 
-  const sections: Section[] = [
+  const sections = useMemo(() => [
     { id: 'overview', label: 'Overview' },
     { id: 'processo-sviluppo', label: t.projects.details.timeline },
     { id: 'sfide-soluzioni', label: `${t.projects.details.challenges} & ${t.projects.details.solutions}` },
     { id: 'progetti-correlati', label: t.projects.details.relatedProjects }
-  ];
+  ], [t.projects.details]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

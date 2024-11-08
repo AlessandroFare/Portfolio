@@ -27,8 +27,6 @@ const projectsByYear = projects.reduce((acc, project) => {
   return acc;
 }, {} as Record<string, typeof projects>);
 
-const sortedYears = Object.keys(projectsByYear).sort((a, b) => parseInt(b) - parseInt(a));
-
 export default function Projects() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

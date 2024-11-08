@@ -41,17 +41,6 @@ export function getProjectDescription(slug: string, language: 'it' | 'en'): stri
   return translations[slug]?.description || '';
 }
 
-function getImagePath(basePath: string): string {
-  const extensions = ['.jpg', '.jpeg', '.png', '.webp'];
-  
-  // Rimuovi eventuali estensioni esistenti
-  const basePathWithoutExt = basePath.replace(/\.[^/.]+$/, '');
-  
-  // Restituisci il percorso base senza estensione
-  // Next.js si occuperà di trovare il formato corretto
-  return basePathWithoutExt;
-}
-
 export const projects: Project[] = [
   {
     slug: 'pikbook',

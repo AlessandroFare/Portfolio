@@ -41,6 +41,16 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
     return Math.abs(offset) * velocity;
   };
 
+  const dragEndHandler = (e: any, { offset, velocity }: any) => {
+    const swipe = swipePower(offset.x, velocity.x);
+
+    if (swipe < -swipeConfidenceThreshold) {
+      paginate(1);
+    } else if (swipe > swipeConfidenceThreshold) {
+      paginate(-1);
+    }
+  };
+
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => (prevIndex + newDirection + images.length) % images.length);

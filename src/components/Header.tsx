@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Menu from './Menu';
 import ThemeToggle from './ThemeToggle';
@@ -17,7 +16,6 @@ export default function Header({ showHomeLink = false }: HeaderProps) {
   const [hidden, setHidden] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
-  const { theme } = useTheme();
   const { t } = useLanguage();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
