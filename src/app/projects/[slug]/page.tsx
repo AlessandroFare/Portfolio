@@ -4,14 +4,13 @@ import ProjectPage from '@/components/ProjectPage';
 import { getProjectBySlug, projects } from '@/config/projects';
 import { notFound } from 'next/navigation';
 
-interface Props {
+interface PageProps {
   params: {
     slug: string;
   };
-  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const project = getProjectBySlug(params.slug);
   
   if (!project) {
@@ -45,7 +44,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: PageProps) {
   const project = getProjectBySlug(params.slug);
 
   if (!project) {
