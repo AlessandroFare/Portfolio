@@ -1,0 +1,10 @@
+.mask {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  mask-image: url('/mask.svg');
+  mask-repeat: no-repeat;
+  mask-size: 40px;
+  background: white;
+  mix-blend-mode: difference;
+} 
