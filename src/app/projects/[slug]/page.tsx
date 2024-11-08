@@ -4,13 +4,15 @@ import ProjectPage from '@/components/ProjectPage';
 import { getProjectBySlug, projects } from '@/config/projects';
 import { notFound } from 'next/navigation';
 
-type PageProps = {
+// Definiamo il tipo corretto per i params in Next.js 15
+type Props = {
   params: {
     slug: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(params.slug);
   
   if (!project) {
@@ -44,7 +46,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: PageProps) {
+// La funzione Page non deve essere async se non fa operazioni asincrone
+export default function Page({ params }: Props) {
   const project = getProjectBySlug(params.slug);
 
   if (!project) {
