@@ -5,7 +5,10 @@ import { getProjectBySlug, projects } from '@/config/projects';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: { slug: string }
+  params: {
+    slug: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -42,7 +45,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const project = getProjectBySlug(params.slug);
 
   if (!project) {
