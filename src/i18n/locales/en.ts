@@ -135,8 +135,33 @@ const translations = {
     close: 'Close',
   },
   timeline: {
-    date: 'Date',
-    milestone: 'Milestone'
+    title: "My Journey",
+    work: {
+      siva: {
+        description: "Backend development with NestJS and cloud services integration.",
+        role: "Backend Developer"
+      },
+      publicis: {
+        description: "Development and maintenance of backend systems with Spring Boot and AWS.",
+        role: "Backend Developer"
+      },
+      kpmg: {
+        description: "Enterprise application development with OutSystems platform.",
+        role: "OutSystems Developer"
+      }
+    },
+    education: {
+      degree: {
+        title: "Computer Science Degree",
+        description: "Bachelor's degree in Computer Science."
+      }
+    },
+    labels: {
+      present: "Present",
+      company: "Company",
+      technologies: "Technologies",
+      viewMore: "View More"
+    }
   },
   theme: {
     toggleTheme: 'Toggle theme',
@@ -174,6 +199,23 @@ const translations = {
   toc: {
     jumpTo: 'Jump to section',
     backToTop: 'Back to top'
+  },
+  downloads: {
+    title: "Downloads & Resources",
+    description: "Download my CV and portfolio in PDF format.",
+    clickToDownload: "Click to download",
+    cv: {
+      description: "My complete curriculum vitae with all experiences and skills."
+    },
+    portfolio: {
+      description: "Detailed portfolio with projects and technical achievements."
+    }
+  },
+  easterEgg: {
+    playGame: "Play Snake!",
+    gameOver: "Game Over",
+    score: "Score",
+    restart: "Play Again"
   }
 };
 

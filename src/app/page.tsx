@@ -6,24 +6,24 @@ import Hero from "@/components/Hero";
 import ProjectsShowcase from "@/components/ProjectsShowcase";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import CareerTimeline from "@/components/CareerTimeline";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import LoadingScreen from "@/components/LoadingScreen";
+import DownloadSection from '@/components/DownloadSection';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Controlla se è la prima visita
     const hasVisited = localStorage.getItem('hasVisited');
     if (hasVisited) {
       setIsLoading(false);
     } else {
-      // Se è la prima visita, mostra il loader e imposta il flag
       setTimeout(() => {
         setIsLoading(false);
         localStorage.setItem('hasVisited', 'true');
-      }, 3000); // Ridotto a 3 secondi per non essere troppo lungo
+      }, 3000);
     }
   }, []);
 
@@ -38,7 +38,9 @@ export default function Home() {
           <Hero />
           <ProjectsShowcase />
           <Projects />
+          <CareerTimeline />
           <Experience />
+          <DownloadSection />
         </main>
         <Footer />
       </PageTransition>

@@ -134,8 +134,33 @@ export default {
     close: 'Chiudi',
   },
   timeline: {
-    date: 'Data',
-    milestone: 'Milestone'
+    title: "Il Mio Percorso",
+    work: {
+      siva: {
+        description: "Sviluppo di applicazioni backend con NestJS e integrazione con servizi cloud.",
+        role: "Backend Developer"
+      },
+      publicis: {
+        description: "Sviluppo e manutenzione di sistemi backend con Spring Boot e AWS.",
+        role: "Backend Developer"
+      },
+      kpmg: {
+        description: "Sviluppo di applicazioni enterprise con la piattaforma OutSystems.",
+        role: "OutSystems Developer"
+      }
+    },
+    education: {
+      degree: {
+        title: "Laurea in Informatica",
+        description: "Conseguimento della laurea triennale in Informatica."
+      }
+    },
+    labels: {
+      present: "Presente",
+      company: "Azienda",
+      technologies: "Tecnologie",
+      viewMore: "Vedi Altro"
+    }
   },
   theme: {
     toggleTheme: 'Cambia tema',
@@ -173,5 +198,22 @@ export default {
   toc: {
     jumpTo: 'Vai alla sezione',
     backToTop: 'Torna su'
+  },
+  downloads: {
+    title: "Download e Risorse",
+    description: "Scarica il mio CV e portfolio in formato PDF.",
+    clickToDownload: "Clicca per scaricare",
+    cv: {
+      description: "Il mio curriculum vitae completo con tutte le esperienze e competenze."
+    },
+    portfolio: {
+      description: "Portfolio dettagliato con progetti e risultati tecnici."
+    }
+  },
+  easterEgg: {
+    playGame: "Gioca a Snake!",
+    gameOver: "Game Over",
+    score: "Punteggio",
+    restart: "Gioca Ancora"
   },
 }; 
