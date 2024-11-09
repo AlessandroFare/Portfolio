@@ -170,4 +170,8 @@ export default {
       follow: 'Seguimi sui social'
     }
   },
+  toc: {
+    jumpTo: 'Vai alla sezione',
+    backToTop: 'Torna su'
+  },
 }; 

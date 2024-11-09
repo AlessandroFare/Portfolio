@@ -171,6 +171,10 @@ const translations = {
       follow: 'Follow me on social media'
     }
   },
+  toc: {
+    jumpTo: 'Jump to section',
+    backToTop: 'Back to top'
+  }
 };
 
 export default translations; 

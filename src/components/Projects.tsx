@@ -256,7 +256,7 @@ export default function Projects() {
 
                       {/* Info del progetto */}
                       <div className="space-y-3 md:space-y-4">
-                        <h3 className="text-xl md:text-2xl font-light">{project.title}</h3>
+                        <h3 className="text-lg md:text-xl font-light">{project.title}</h3>
                         <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 line-clamp-2">
                           {getProjectDescription(project.slug, language)}
                         </p>

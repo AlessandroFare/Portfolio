@@ -16,7 +16,7 @@ export default function LanguageSelector() {
     >
       <button
         onClick={() => setLanguage('it')}
-        className={`px-2 py-1 rounded-md transition-colors ${
+        className={`px-2 py-1 text-xs md:text-sm rounded-md transition-colors ${
           language === 'it'
             ? 'bg-gray-200 dark:bg-gray-800'
             : 'hover:bg-gray-100 dark:hover:bg-gray-800/50'
@@ -44,7 +44,7 @@ export default function LanguageSelector() {
           : t.language.switch.replace('{language}', t.language.en)
         }
       >
-        EN
+        <span className="text-xs md:text-sm">EN</span>
       </button>
     </motion.div>
   );

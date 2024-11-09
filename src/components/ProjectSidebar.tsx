@@ -106,7 +106,7 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
       {/* Project Stats */}
       {project.details.stats && (
         <div className="space-y-6">
-          <h3 className="text-lg font-light">{t.projects.details.stats}</h3>
+          <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">{t.projects.details.stats}</h3>
           <div className="grid grid-cols-2 gap-4">
             {project.details.stats.commits && (
               <StatItem 
@@ -155,18 +155,18 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
         {project.links.demo && (
           <AnimatedLink 
             href={project.links.demo}
-            className="flex items-center gap-2 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+            className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
           >
-            <Globe className="w-5 h-5" />
+            <Globe className="w-5 h-5 flex-shrink-0" />
             <span>{t.projects.details.viewDemo}</span>
           </AnimatedLink>
         )}
         {project.links.github && (
           <AnimatedLink 
             href={project.links.github}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
           >
-            <GitBranch className="w-5 h-5" />
+            <GitBranch className="w-5 h-5 flex-shrink-0" />
             <span>{t.projects.details.viewGithub}</span>
           </AnimatedLink>
         )}

@@ -22,58 +22,39 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section 
-      className="min-h-[90vh] flex flex-col justify-center relative"
-      role="banner"
-      aria-labelledby="hero-title"
-    >
-      {/* Background Gradient */}
-      <div 
-        className="absolute inset-0 opacity-30 dark:opacity-20"
-        style={{
-          background: theme === 'dark' 
-            ? 'radial-gradient(circle at 50% 50%, #1a1a1a 0%, transparent 70%)'
-            : 'radial-gradient(circle at 50% 50%, #f0f0f0 0%, transparent 70%)'
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="max-w-4xl">
-          {/* Titolo Principale */}
+    <section className="min-h-screen relative flex items-center">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl">
           <motion.h1
-            id="hero-title"
             initial="hidden"
             animate="visible"
             custom={0}
             variants={fadeUpVariants}
-            className="text-6xl md:text-7xl lg:text-8xl font-light mb-8"
+            className="text-3xl md:text-5xl font-light mb-6 md:mb-8"
           >
             {t.hero.title}
           </motion.h1>
 
-          {/* Sottotitoli */}
-          <div className="space-y-6 text-lg md:text-xl text-gray-600 dark:text-gray-400">
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={fadeUpVariants}
-            >
-              {t.hero.subtitle}
-            </motion.p>
-            
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              variants={fadeUpVariants}
-            >
-              {t.hero.currentRole}
-            </motion.p>
-          </div>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={fadeUpVariants}
+            className="text-base md:text-2xl text-gray-600 dark:text-gray-400 mb-3 md:mb-4"
+          >
+            {t.hero.subtitle}
+          </motion.p>
 
-          {/* CTA Section */}
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={fadeUpVariants}
+            className="text-sm md:text-xl text-gray-600 dark:text-gray-400"
+          >
+            {t.hero.currentRole}
+          </motion.p>
+
           <motion.div
             initial="hidden"
             animate="visible"
@@ -83,7 +64,7 @@ export default function Hero() {
           >
             <a 
               href="#projects"
-              className="group inline-flex items-center gap-2 text-lg hover:opacity-60 transition-opacity"
+              className="group inline-flex items-center gap-2 text-base md:text-lg hover:opacity-60 transition-opacity"
               aria-label={t.hero.aria.cta.projects}
             >
               <span>{t.hero.cta.projects}</span>
@@ -109,44 +90,48 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        aria-label={t.hero.aria.scroll}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <motion.span 
-            className="text-sm text-gray-500"
-            animate={{ 
-              opacity: [0.5, 1, 0.5],
-              y: [0, -5, 0] 
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            {t.scroll.progress}
-          </motion.span>
-          <motion.div 
-            className="w-[1px] h-12 bg-gray-300 dark:bg-gray-700"
-            animate={{ 
-              scaleY: [0.3, 1, 0.3],
-              opacity: [0.3, 1, 0.3]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            aria-hidden="true"
-          />
-        </div>
-      </motion.div>
+      {/* Scroll Indicator - visibile solo su desktop */}
+      <div className="hidden md:block">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          aria-label={t.hero.aria.scroll}
+        >
+          <div className="flex flex-col items-center gap-2">
+            <motion.span 
+              className="text-sm text-gray-500 whitespace-nowrap px-4 py-2 
+                       bg-gray-900/80 dark:bg-gray-900/90 backdrop-blur-sm rounded-full 
+                       text-white dark:text-gray-200"
+              animate={{ 
+                opacity: [0.5, 1, 0.5],
+                y: [0, -5, 0] 
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              {t.scroll.progress}
+            </motion.span>
+            <motion.div 
+              className="w-[1px] h-12 bg-gray-400 dark:bg-gray-600"
+              animate={{ 
+                scaleY: [0.3, 1, 0.3],
+                opacity: [0.3, 1, 0.3]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              aria-hidden="true"
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 } 

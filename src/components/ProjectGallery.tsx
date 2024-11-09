@@ -82,7 +82,7 @@ export default function ProjectGallery({ images, title }: ProjectGalleryProps) {
             >
               <div className="flex flex-col items-center gap-4">
                 <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
-                <span className="text-sm text-gray-500">{t.gallery.loading}</span>
+                <span className="text-xs md:text-sm text-gray-500">{t.gallery.loading}</span>
               </div>
             </motion.div>
           )}

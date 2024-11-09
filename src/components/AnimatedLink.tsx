@@ -7,13 +7,15 @@ interface AnimatedLinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  label?: string;
 }
 
-export default function AnimatedLink({ href, children, className = '' }: AnimatedLinkProps) {
+export default function AnimatedLink({ href, children, className = '', label }: AnimatedLinkProps) {
   return (
     <motion.div
       whileHover={{ x: 5 }}
       transition={{ duration: 0.2 }}
+      className="w-fit"
     >
       <Link href={href} className={className}>
         {children}

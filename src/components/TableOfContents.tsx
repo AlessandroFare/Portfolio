@@ -88,11 +88,7 @@ export default function TableOfContents() {
               <li key={id}>
                 <button
                   onClick={() => scrollToSection(id)}
-                  className={`text-sm whitespace-nowrap ${
-                    activeSection === id
-                      ? 'text-blue-500'
-                      : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-100'
-                  } transition-colors`}
+                  className="text-xs md:text-sm whitespace-nowrap text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"
                 >
                   {label}
                 </button>
@@ -103,9 +99,8 @@ export default function TableOfContents() {
           <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              className="text-xs md:text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"
             >
-              <ChevronUp className="w-4 h-4" />
               {t.nav.home}
             </button>
           </div>
@@ -147,7 +142,12 @@ export default function TableOfContents() {
                           : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-100'
                       } transition-colors`}
                     >
-                      {label}
+                      <span className="text-sm md:text-base text-gray-500">
+                        {label}
+                      </span>
+                      <button className="text-xs md:text-sm text-gray-500 hover:text-current transition-colors">
+                        {t.toc.jumpTo}
+                      </button>
                     </button>
                   </li>
                 ))}
@@ -162,7 +162,7 @@ export default function TableOfContents() {
                   className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                 >
                   <ChevronUp className="w-4 h-4" />
-                  {t.nav.home}
+                  {t.toc.backToTop}
                 </button>
               </div>
             </motion.div>

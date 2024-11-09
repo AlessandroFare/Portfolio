@@ -29,8 +29,8 @@ export default function Timeline({ items }: TimelineProps) {
             className="mb-8 last:mb-0"
           >
             <div className="absolute left-0 w-3 h-3 bg-gray-200 dark:bg-gray-800 rounded-full -translate-x-[1.3rem]" />
-            <div className="text-sm text-gray-500 mb-1">{item.date}</div>
-            <div className="text-gray-600 dark:text-gray-400">{item.milestone}</div>
+            <div className="text-xs md:text-sm text-gray-500 mb-1">{item.date}</div>
+            <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">{item.milestone}</div>
           </motion.div>
         ))}
       </div>

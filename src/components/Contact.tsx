@@ -49,8 +49,10 @@ export default function Contact() {
         >
           {/* Header */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-light">{t.contact.title}</h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+            <h1 className="text-3xl md:text-5xl font-light mb-4 md:mb-6">
+              {t.contact.title}
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               {t.contact.description}
             </p>
           </div>

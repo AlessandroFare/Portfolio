@@ -61,34 +61,19 @@ export default function ProjectPage({ project }: ProjectPageProps) {
 
             {/* Descrizione */}
             <section id="overview" aria-label="Panoramica del progetto">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-2xl font-light"
-              >
-                Overview
-              </motion.h2>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="prose dark:prose-invert max-w-none"
-              >
-                <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                  {translations.description}
-                </p>
-              </motion.div>
+              <h1 className="text-2xl md:text-4xl font-light mb-4 md:mb-6">
+                {project.title}
+              </h1>
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-6 md:mb-8">
+                {translations.description}
+              </p>
             </section>
 
             {/* Processo di Sviluppo */}
             <section id="processo-sviluppo" aria-label="Processo di sviluppo" className="space-y-16">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-2xl font-light"
-              >
+              <h2 className="text-lg md:text-2xl font-light mb-3 md:mb-4">
                 {t.projects.details.timeline}
-              </motion.h2>
+              </h2>
 
               {/* Timeline */}
               <div className="relative pl-8 border-l border-gray-200 dark:border-gray-800">

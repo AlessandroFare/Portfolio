@@ -286,12 +286,12 @@ function SkillCard({ skill }: { skill: Skill }) {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ duration: 0.2 }}
-      className="px-4 py-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:shadow-lg 
+      className="px-3 md:px-4 py-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:shadow-lg 
                  hover:bg-white dark:hover:bg-gray-800 transition-all group"
     >
-      <div className="flex items-center gap-3">
-        {Icon && <Icon className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />}
-        <span className="group-hover:text-blue-500 transition-colors">
+      <div className="flex items-center gap-2 md:gap-3">
+        {Icon && <Icon className="w-4 h-4 flex-shrink-0 text-gray-400 group-hover:text-blue-500 transition-colors" />}
+        <span className="text-sm md:text-base truncate group-hover:text-blue-500 transition-colors">
           {skill.name[language]}
         </span>
       </div>
@@ -309,17 +309,17 @@ function HobbyCard({ hobby }: { hobby: Hobby }) {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ duration: 0.2 }}
-      className="px-4 py-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:shadow-lg 
+      className="px-3 md:px-4 py-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:shadow-lg 
                  hover:bg-white dark:hover:bg-gray-800 transition-all group"
     >
-      <div className="flex items-center gap-3">
-        <hobby.icon className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
-        <div>
-          <span className="group-hover:text-blue-500 transition-colors">
+      <div className="flex items-center gap-2 md:gap-3">
+        <hobby.icon className="w-4 h-4 flex-shrink-0 text-gray-400 group-hover:text-blue-500 transition-colors" />
+        <div className="min-w-0">
+          <span className="text-sm md:text-base block truncate group-hover:text-blue-500 transition-colors">
             {hobby.name[language]}
           </span>
           {hobby.description && (
-            <span className="text-sm text-gray-500 block">
+            <span className="text-xs md:text-sm block truncate text-gray-500">
               {hobby.description[language]}
             </span>
           )}
@@ -499,7 +499,7 @@ export default function About() {
                   <h3 className="text-2xl font-light mb-8 pb-2 border-b border-gray-200 dark:border-gray-800">
                     {t.about.skills.development}
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     {developmentSkills.map((skill) => (
                       <SkillCard key={skill.name.en} skill={skill} />
                     ))}
@@ -510,7 +510,7 @@ export default function About() {
                   <h3 className="text-2xl font-light mb-8 pb-2 border-b border-gray-200 dark:border-gray-800">
                     {t.about.skills.frameworks}
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     {frameworkSkills.map((skill) => (
                       <SkillCard key={skill.name.en} skill={skill} />
                     ))}
@@ -521,7 +521,7 @@ export default function About() {
                   <h3 className="text-2xl font-light mb-8 pb-2 border-b border-gray-200 dark:border-gray-800">
                     {t.about.skills.other}
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                     {otherSkills.map((skill) => (
                       <SkillCard key={skill.name.en} skill={skill} />
                     ))}
@@ -570,7 +570,7 @@ export default function About() {
                   <div className="space-y-8">
                     <div>
                       <h4 className="text-xl font-light mb-4">{t.about.interests.sports}</h4>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                         {sports.map((sport) => (
                           <HobbyCard key={sport.name.it} hobby={sport} />
                         ))}
@@ -578,7 +578,7 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="text-xl font-light mb-4">{t.about.interests.creative}</h4>
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                         {creative.map((hobby) => (
                           <HobbyCard key={hobby.name.it} hobby={hobby} />
                         ))}

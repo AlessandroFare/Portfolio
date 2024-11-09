@@ -80,7 +80,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-light mb-16"
+          className="text-2xl md:text-3xl font-light mb-12"
         >
           {t.experience.title}
         </motion.h2>
@@ -118,7 +118,7 @@ export default function Experience() {
                   {/* Header */}
                   <div>
                     <div className="flex items-center justify-between">
-                      <h3 className="text-2xl font-light">{exp.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-light">{exp.title}</h3>
                       <motion.div
                         animate={{ rotate: expandedIndex === index ? 180 : 0 }}
                         transition={{ duration: 0.2 }}

@@ -29,8 +29,8 @@ export function InfoItem({ icon: Icon, label, value, ariaLabel }: InfoItemProps)
         <Icon className="w-5 h-5 text-gray-500" />
       </div>
       <div>
-        <div className="text-sm text-gray-500">{label}</div>
-        <div className="text-gray-600 dark:text-gray-400">{value}</div>
+        <div className="text-sm md:text-base text-gray-500">{label}</div>
+        <div className="text-sm md:text-base text-gray-600 dark:text-gray-400">{value}</div>
       </div>
     </motion.div>
   );

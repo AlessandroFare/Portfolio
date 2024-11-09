@@ -3,16 +3,22 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+interface SkillName {
+  [key: string]: string;  // 'it' | 'en'
+}
+
+interface Skill {
+  name: SkillName;
+  icon?: React.ElementType;
+}
+
 interface SkillCardProps {
-  skill: {
-    name: string;
-    icon?: React.ElementType;
-  };
+  skill: Skill;
 }
 
 export default function SkillCard({ skill }: SkillCardProps) {
   const Icon = skill.icon;
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <motion.div
@@ -23,7 +29,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
       className="px-4 py-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg hover:shadow-lg 
                  hover:bg-white dark:hover:bg-gray-800 transition-all group"
       role="listitem"
-      aria-label={`${t.about.skills.title}: ${skill.name}`}
+      aria-label={`${t.about.skills.title}: ${skill.name[language]}`}
     >
       <div className="flex items-center gap-3">
         {Icon && (
@@ -32,7 +38,9 @@ export default function SkillCard({ skill }: SkillCardProps) {
             aria-hidden="true"
           />
         )}
-        <span className="group-hover:text-blue-500 transition-colors">{skill.name}</span>
+        <span className="text-sm md:text-base truncate group-hover:text-blue-500 transition-colors">
+          {skill.name[language]}
+        </span>
       </div>
     </motion.div>
   );

@@ -6,8 +6,13 @@ import { useTheme } from 'next-themes';
 import { useRouter, usePathname } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import styles from '@/styles/components/Menu.module.css';
+import { Menu as MenuIcon } from 'lucide-react';
 
-export default function Menu() {
+interface MenuProps {
+  children?: React.ReactNode;
+}
+
+export default function Menu({ children }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
@@ -18,7 +23,6 @@ export default function Menu() {
   useEffect(() => {
     setMounted(true);
     
-    // Gestisce la chiusura del menu con ESC
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsOpen(false);
@@ -27,7 +31,6 @@ export default function Menu() {
 
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Blocca lo scroll quando il menu è aperto
       document.body.style.overflow = 'hidden';
     }
 
@@ -87,13 +90,11 @@ export default function Menu() {
   return (
     <div className={`${styles.container} ${theme === 'dark' ? styles.dark : ''}`}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={styles.menuButton}
-        aria-expanded={isOpen}
-        aria-controls="main-menu"
-        aria-label={t.menu.toggle}
+        onClick={() => setIsOpen(true)}
+        className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+        aria-label={t.header.toggleMenu}
       >
-        <span className="text-sm">{t.menu.title}</span>
+        <MenuIcon className="w-6 h-6" />
       </button>
 
       <AnimatePresence mode="wait">
@@ -123,64 +124,48 @@ export default function Menu() {
             >
               <div className="h-full flex flex-col px-8 md:px-16 py-8 md:py-12">
                 <div className="flex justify-between items-center mb-8 md:mb-16">
-                  <span className="text-sm text-gray-500">{t.menu.title}</span>
+                  <span className="text-sm md:text-base text-gray-500">{t.menu.title}</span>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-sm border border-current rounded-full px-3 py-0.5 md:px-4 md:py-1"
+                    className="text-xs md:text-sm border border-current rounded-full px-3 py-1"
                     aria-label={t.menu.close}
                   >
                     {t.menu.close}
                   </button>
                 </div>
 
-                <nav 
-                  className={styles.nav}
-                  role="navigation"
-                  aria-label={t.menu.navigation}
-                >
-                  {menuItems.map((item) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <button
-                        onClick={() => handleMenuClick(item.href)}
-                        className="text-4xl md:text-5xl font-light hover:opacity-50 transition-opacity"
-                      >
-                        {item.label}
-                      </button>
-                    </motion.div>
-                  ))}
+                <nav className="flex-1 mb-8" aria-label={t.menu.navigation}>
+                  <ul className="space-y-6 text-3xl md:text-4xl font-light">
+                    {menuItems.map((item) => (
+                      <li key={item.href}>
+                        <button
+                          onClick={() => handleMenuClick(item.href)}
+                          className="hover:text-blue-500 transition-colors"
+                        >
+                          {item.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </nav>
 
-                <div className="mt-auto">
-                  <span className="block text-sm text-gray-500 mb-4">{t.menu.social.title}</span>
-                  <div 
-                    className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-16 md:gap-y-4 ${styles.social}`}
-                    role="list"
-                    aria-label={t.menu.social.follow}
-                  >
+                <div>
+                  <h2 className="text-sm text-gray-500 mb-4">{t.menu.social.title}</h2>
+                  <ul className="flex gap-4">
                     {socialItems.map((item) => (
-                      <motion.div
-                        key={item.label}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
+                      <li key={item.href}>
                         <a
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-base md:text-lg hover:opacity-50 transition-opacity"
+                          className="text-sm hover:text-blue-500 transition-colors"
                           aria-label={item.ariaLabel}
                         >
                           {item.label}
                         </a>
-                      </motion.div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </motion.aside>

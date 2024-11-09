@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto py-6 px-8 md:px-12 lg:px-16">
         <nav 
-          className="flex justify-center gap-8 text-sm"
+          className="flex justify-center gap-8 text-xs md:text-sm"
           aria-label={t.footer.aria.navigation}
         >
           <a 

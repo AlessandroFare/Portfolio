@@ -91,10 +91,10 @@ export default function ProjectCard({
           className="relative z-10 p-6 flex flex-col justify-end h-full"
           style={{ transform: "translateZ(50px)" }}
         >
-          <h3 className="text-xl font-medium text-white mb-2">
+          <h3 className="text-lg md:text-xl font-medium text-white mb-1 md:mb-2">
             {title}
           </h3>
-          <p className="text-sm text-white/80">
+          <p className="text-sm md:text-base text-white/80">
             {translatedDescription}
           </p>
           <div className="flex flex-wrap gap-2 mt-4">
