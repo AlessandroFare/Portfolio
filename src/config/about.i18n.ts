@@ -24,7 +24,7 @@ export const aboutIT: AboutTranslations = {
       description: [
         'Curriculum incentrato su programmazione, algoritmi e strutture dati',
         'Progetti pratici in vari linguaggi di programmazione',
-        'Tesi sulla sicurezza informatica e analisi delle vulnerabilità'
+        'Tesi sulla classificazione automatica dei dati di fatture attraverso il Machine Learning'
       ]
     }
   ]
@@ -45,7 +45,7 @@ export const aboutEN: AboutTranslations = {
       description: [
         'Curriculum focused on programming, algorithms and data structures',
         'Practical projects in various programming languages',
-        'Thesis on computer security and vulnerability analysis'
+        'Thesis on automatic classification of invoice data through Machine Learning'
       ]
     }
   ]

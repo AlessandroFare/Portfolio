@@ -138,7 +138,7 @@ const translations = {
     title: "My Journey",
     work: {
       siva: {
-        description: "Backend development with NestJS and cloud services integration.",
+        description: "Backend development with HonoJS and cloud services integration.",
         role: "Backend Developer"
       },
       publicis: {

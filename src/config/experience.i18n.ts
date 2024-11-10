@@ -7,7 +7,7 @@ interface ExperienceTranslations {
 export const experienceTranslationsIT: ExperienceTranslations = {
   'siva': {
     description: [
-      "Sviluppo Backend per un'applicazione di Car Rental tramite l'uso di NestJS",
+      "Sviluppo Backend per un'applicazione peer to peer di Car Rental tramite l'uso di HonoJS",
       "Testing e deploy delle piattaforme",
       "Modellazione dei dati (progettazione e implementazione)",
       "Analisi del business"
@@ -46,7 +46,7 @@ export const experienceTranslationsIT: ExperienceTranslations = {
 export const experienceTranslationsEN: ExperienceTranslations = {
   'siva': {
     description: [
-      "Backend development for a Car Rental application using NestJS",
+      "Backend development for a peer to peer Car Rental application using HonoJS",
       "Platform testing and deployment",
       "Data modeling (design and implementation)",
       "Business analysis"

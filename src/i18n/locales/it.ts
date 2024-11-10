@@ -137,7 +137,7 @@ export default {
     title: "Il Mio Percorso",
     work: {
       siva: {
-        description: "Sviluppo di applicazioni backend con NestJS e integrazione con servizi cloud.",
+        description: "Sviluppo di applicazioni backend con HonoJS e integrazione con servizi cloud.",
         role: "Backend Developer"
       },
       publicis: {
