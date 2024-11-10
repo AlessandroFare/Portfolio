@@ -43,7 +43,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     id: 'degree',
     date: '2022',
-    title: 'Laurea in Informatica',
+    title: 'Bachelor of Computer Science',
     type: 'education'
   }
 ];
